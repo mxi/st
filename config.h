@@ -5,7 +5,24 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack:size=16:antialias=true:autohint=true";
+static char *fonts[] = {
+	[ 0] = "Hack:size=5:antialias=true:autohint=true",
+	[ 1] = "Hack:size=6:antialias=true:autohint=true",
+	[ 2] = "Hack:size=7:antialias=true:autohint=true",
+	[ 3] = "Hack:size=8:antialias=true:autohint=true",
+	[ 4] = "Hack:size=10:antialias=true:autohint=true",
+	[ 5] = "Hack:size=12:antialias=true:autohint=true",
+	[ 6] = "Hack:size=14:antialias=true:autohint=true",
+	[ 7] = "Hack:size=16:antialias=true:autohint=true",
+	[ 8] = "Hack:size=18:antialias=true:autohint=true",
+	[ 9] = "Hack:size=20:antialias=true:autohint=true",
+	[10] = "Hack:size=24:antialias=true:autohint=true",
+	[11] = "Hack:size=28:antialias=true:autohint=true",
+	[12] = "Hack:size=32:antialias=true:autohint=true",
+	[13] = "Hack:size=36:antialias=true:autohint=true",
+	[14] = "Hack:size=48:antialias=true:autohint=true",
+};
+static int fonts_current = 7;
 
 /* Spare fonts */
 static char *font2[] = {
@@ -215,6 +232,9 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ TERMMOD,              XK_s,           cyclefonts,     {}        },
+	{ TERMMOD,              XK_k,           kscrollup,      {.i =  5} },
+	{ TERMMOD,              XK_j,	        kscrolldown,    {.i =  5} },
 };
 
 /*
